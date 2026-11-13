@@ -9,4 +9,9 @@
 # Everything else (entrypoint, nginx user, ports, logging) is inherited unchanged.
 FROM tiledesk/tiledesk-docker-proxy:v1.1.2@sha256:ae3610c23c4226711a903b2a4c5cc391fb7462d3c73f252a5dadc318382ef94c
 
+# Surface nginx logs on the container's stdout/stderr so Railway captures
+# start-up errors (e.g. an upstream hostname that fails to resolve).
+RUN ln -sf /dev/stderr /var/log/nginx/error.log \
+ && ln -sf /dev/stdout /var/log/nginx/access.log
+
 COPY nginx.conf /etc/nginx/nginx.conf
