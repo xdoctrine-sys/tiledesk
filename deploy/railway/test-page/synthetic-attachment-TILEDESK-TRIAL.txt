@@ -1,0 +1,4 @@
+TILEDESK-TRIAL synthetic attachment
+marker: TILEDESK-TRIAL-FILE-001
+This file is synthetic test data created only for the Tiledesk self-hosted trial.
+No customer or business data is included.
