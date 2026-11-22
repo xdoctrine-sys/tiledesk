@@ -15,3 +15,4 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log \
  && ln -sf /dev/stdout /var/log/nginx/access.log
 
 COPY nginx.conf /etc/nginx/nginx.conf
+RUN nginx -t
