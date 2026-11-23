@@ -1,0 +1,379 @@
+@use 'mixins' as *;
+
+// Reset + shared primitives. Only CSS logical properties are used (margin-inline-*, inset-inline-*, text-align: start...),
+// so mirroring for Arabic comes from dir="rtl" on the page root (.tr-monitor-v2) and nothing else. See scripts/lint-rtl.mjs.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  position: relative;
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.tr-monitor-v2 {
+  position: relative;
+  block-size: 100%;
+  inline-size: 100%;
+  margin: 0;
+  font-family: var(--tr-font);
+  @include type(body);
+  color: var(--foreground);
+  background: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0; // letter-spacing breaks Arabic joining
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: start;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+a {
+  color: var(--brand);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: var(--accent);
+}
+
+// Thin scrollbars
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--input) transparent;
+}
+
+// While a column handle is dragged: no text selection, one cursor everywhere
+.tr-monitor-v2.tr-resizing,
+.tr-monitor-v2.tr-resizing * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ---------- Shared primitives ----------
+.tr-sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Directional icons are flipped in RTL (send, reply, chevrons...). Non-directional icons never carry this class.
+.tr-mirror {
+  [dir='rtl'] & {
+    transform: scaleX(-1);
+  }
+}
+
+// Phone numbers, #tickets, e-mails, URLs, IDs: always LTR and isolated (section 10.3)
+.tr-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.tr-mono {
+  font-family: var(--tr-font-mono);
+  font-size: 0.92em;
+}
+
+.tr-truncate {
+  @include truncate;
+}
+
+// Icon button: 36px visual, 44px hit area
+.tr-icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 36px;
+  block-size: 36px;
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  transition: background var(--tr-motion-fast) var(--tr-ease-in);
+  flex: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+  }
+  &:hover:not(:disabled) {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+  &[aria-pressed='true'],
+  &[aria-expanded='true'] {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+}
+
+// Buttons: radius 10, 36 px, 1 px border. ONE solid (--primary) button per zone; the others are outline or ghost.
+.tr-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-block-size: 36px;
+  padding-inline: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--foreground);
+  @include type(body, 500);
+  white-space: nowrap;
+  transition: background var(--tr-motion-fast) var(--tr-ease-in), opacity var(--tr-motion-fast) var(--tr-ease-in);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    inset-block: -4px;
+  }
+  &:hover:not(:disabled) {
+    background: var(--muted);
+  }
+
+  &--primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-foreground);
+    &:hover:not(:disabled) {
+      background: var(--primary);
+      opacity: 0.88;
+    }
+  }
+  &--ghost {
+    border-color: transparent;
+    background: transparent;
+    color: var(--muted-foreground);
+    &:hover:not(:disabled) {
+      color: var(--foreground);
+    }
+  }
+  &--danger {
+    background: var(--destructive);
+    border-color: var(--destructive);
+    color: var(--primary-foreground);
+    &:hover:not(:disabled) {
+      background: var(--destructive);
+      opacity: 0.88;
+    }
+  }
+}
+
+// Badge (status / priority / SLA / labels): radius 6, 1 px outline, grey text, never coloured fill.
+.tr-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  block-size: 20px;
+  padding-inline: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted-foreground);
+  @include type(caption);
+  white-space: nowrap;
+
+  &--danger {
+    border-color: color-mix(in srgb, var(--destructive) 30%, transparent);
+    color: var(--destructive);
+  }
+  &--bot {
+    color: var(--muted-foreground);
+  }
+}
+
+.tr-dot {
+  display: inline-block;
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--muted-foreground);
+}
+
+// Menus / popovers
+.tr-menu {
+  position: absolute;
+  z-index: 100;
+  min-inline-size: 200px;
+  max-inline-size: 320px;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  animation: tr-pop var(--tr-motion-base) var(--tr-ease-in);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    inline-size: 100%;
+    min-block-size: 36px;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    @include type(body);
+    color: var(--foreground);
+    text-align: start;
+
+    &:hover:not(:disabled),
+    &.is-active {
+      background: var(--muted);
+    }
+    &.is-selected {
+      color: var(--brand);
+      @include type(body, 600);
+    }
+    &--danger {
+      color: var(--destructive);
+    }
+    tr-icon {
+      color: var(--muted-foreground);
+      flex: none;
+    }
+  }
+  &__kbd {
+    margin-inline-start: auto;
+    color: var(--muted-foreground);
+    @include type(caption);
+  }
+  &__sep {
+    block-size: 1px;
+    margin-block: 4px;
+    background: var(--border);
+  }
+  &__title {
+    padding: 6px 10px 2px;
+    color: var(--muted-foreground);
+    @include type(caption, 600);
+  }
+}
+
+@keyframes tr-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+// Form fields
+.tr-field {
+  inline-size: 100%;
+  min-block-size: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  @include type(body);
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 1px var(--brand);
+  }
+}
+
+.tr-kbd {
+  display: inline-block;
+  min-inline-size: 22px;
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-family: var(--tr-font-mono);
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+// Native <dialog> modals (focus trap, Esc and top layer come from the browser)
+dialog.tr-dialog {
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: var(--shadow-popover);
+  max-inline-size: min(560px, calc(100vw - 32px));
+  max-block-size: calc(100vh - 48px);
+  inline-size: 100%;
+  overflow: hidden;
+
+  &::backdrop {
+    background: var(--scrim);
+  }
+  &[open] {
+    display: flex;
+    flex-direction: column;
+    animation: tr-pop var(--tr-motion-slow) var(--tr-ease-in);
+  }
+}

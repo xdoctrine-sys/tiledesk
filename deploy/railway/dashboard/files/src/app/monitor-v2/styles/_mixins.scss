@@ -1,0 +1,29 @@
+// Typography helper. Sizes/line-heights come from CSS variables so Arabic can override them (see _tokens.scss).
+@mixin type($name, $weight: 400) {
+  font-size: var(--tr-fs-#{$name});
+  line-height: var(--tr-lh-#{$name});
+  font-weight: $weight;
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Breakpoints (section 7.1): XL >=1440, L 1280-1439, M 1024-1279, S 768-1023, XS <768
+@mixin bp-below($px) {
+  @media (max-width: #{$px - 0.02}px) {
+    @content;
+  }
+}
+@mixin bp-above($px) {
+  @media (min-width: #{$px}px) {
+    @content;
+  }
+}

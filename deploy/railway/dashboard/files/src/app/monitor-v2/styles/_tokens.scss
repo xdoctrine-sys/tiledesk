@@ -1,0 +1,143 @@
+/*
+ * Monitor V2 design tokens, declared on the page root (.tr-monitor-v2, inside the shadow root) and never on the
+ * document root: the dashboard's own CSS is not touched. Light is the default theme; dark is .tr-monitor-v2[data-theme='dark'].
+ */
+.tr-monitor-v2 {
+  color-scheme: light;
+
+  /* Light palette = shadcn "cyan" theme (teal-blue primary, zinc neutrals) */
+  --canvas: oklch(0.967 0.001 286.375); /* app background, behind the floating panels */
+  --background: oklch(1 0 0); /* panels */
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.52 0.105 223.128); /* solid buttons, unread badge, active rail icon */
+  --primary-foreground: oklch(0.984 0.019 200.873);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --brand: oklch(0.52 0.105 223.128); /* the single accent (same teal as --primary): links, active tab, focus, read ticks */
+  --brand-soft: oklch(0.968 0.027 205); /* agent bubbles */
+  --destructive: oklch(0.577 0.245 27.325); /* SLA breached, human wait beyond SLA, send failure */
+  --warning: #d97706; /* internal note, draft, SLA at risk */
+  --success: #16a34a; /* online / typing dot only */
+
+  /* Derived values (no new colour): overlay and the popover shadow */
+  --scrim: rgba(9, 9, 11, 0.45);
+  --shadow-flat: none;
+  --shadow-popover: 0 8px 24px rgba(9, 9, 11, 0.08);
+
+  /* Official channel colours, used only in the 14 px corner badge of an avatar */
+  --channel-whatsapp: #25d366;
+  --channel-instagram: #e1306c;
+  --channel-messenger: #0084ff;
+  --channel-telegram: #26a5e4;
+
+  /* Radii: panels 16, popovers / menus / dialogs 12, fields and buttons 10, badges 6, bubbles 16 (sender corner 4) */
+  --radius: 16px;
+  --radius-lg: 12px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --radius-bubble: 16px;
+  --radius-tail: 4px;
+
+  --tr-motion-fast: 120ms;
+  --tr-motion-base: 200ms;
+  --tr-motion-slow: 320ms;
+  --tr-ease-in: cubic-bezier(0.2, 0, 0, 1);
+  --tr-ease-out: cubic-bezier(0.4, 0, 1, 1);
+
+  --tr-font: 'TR Inter', 'TR Arabic', system-ui, -apple-system, 'Segoe UI', 'Noto Sans Arabic', 'Geeza Pro', Tahoma, sans-serif;
+  --tr-font-mono: 'TR Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale (weights 400 / 500 / 600) */
+  --tr-fs-display: 24px;
+  --tr-lh-display: 32px;
+  --tr-fs-title-lg: 18px; /* panel titles */
+  --tr-lh-title-lg: 26px;
+  --tr-fs-title: 15px; /* names */
+  --tr-lh-title: 22px;
+  --tr-fs-subtitle: 15px;
+  --tr-lh-subtitle: 22px;
+  --tr-fs-body-lg: 14px; /* message text */
+  --tr-lh-body-lg: 22px;
+  --tr-fs-body: 14px;
+  --tr-lh-body: 20px;
+  --tr-fs-body-sm: 13px; /* preview, sub-titles */
+  --tr-lh-body-sm: 18px;
+  --tr-fs-caption: 12px; /* meta, times */
+  --tr-lh-caption: 16px;
+  --tr-fs-micro: 11px;
+  --tr-lh-micro: 14px;
+
+  /* Layout defaults (the shell overrides the widths with the agent's saved ones) */
+  --tr-rail-w: 64px;
+  --tr-gap: 8px;
+  --tr-header-h: 64px;
+  --tr-who-h: 40px;
+  --tr-item-h: 72px;
+  --tr-tap: 44px;
+  --tr-ribbon-h: 4px;
+  --tr-ribbon-open-h: 28px;
+}
+
+/* Arabic: +2 px line-height, 13 px minimum, never letter-spaced */
+.tr-monitor-v2[lang='ar'] {
+  --tr-lh-display: 34px;
+  --tr-lh-title-lg: 28px;
+  --tr-lh-title: 24px;
+  --tr-lh-subtitle: 24px;
+  --tr-lh-body-lg: 24px;
+  --tr-lh-body: 22px;
+  --tr-lh-body-sm: 20px;
+  --tr-fs-caption: 13px;
+  --tr-lh-caption: 18px;
+  --tr-fs-micro: 12px;
+  --tr-lh-micro: 16px;
+}
+
+.tr-monitor-v2 {
+  --tr-dir: ltr;
+}
+.tr-monitor-v2[dir='rtl'] {
+  --tr-dir: rtl;
+}
+
+.tr-monitor-v2[data-theme='dark'] {
+  color-scheme: dark;
+
+  --canvas: oklch(0.141 0.005 285.823);
+  --background: oklch(0.21 0.006 285.885);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.45 0.085 224.283);
+  --primary-foreground: oklch(0.984 0.019 200.873);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.552 0.016 285.938);
+  --brand: oklch(0.715 0.143 215.221); /* lighter cyan: readable on dark panels */
+  --brand-soft: oklch(0.3 0.045 224);
+  --destructive: oklch(0.704 0.191 22.216);
+  --warning: #f59e0b;
+  --success: #22c55e;
+
+  --scrim: rgba(0, 0, 0, 0.6);
+  --shadow-popover: 0 0 0 1px var(--border); /* dark: 1 px border, no shadow */
+}

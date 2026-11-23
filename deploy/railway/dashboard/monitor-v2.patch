@@ -1,0 +1,44 @@
+diff --git a/src/app/app.routing.ts b/src/app/app.routing.ts
+index 634efa5..6114ac8 100755
+--- a/src/app/app.routing.ts
++++ b/src/app/app.routing.ts
+@@ -541,6 +541,13 @@ const routes: Routes = [
+ 
+   // { path: 'project/:projectid/wsrequests', component: WsRequestsListComponent, canActivate: [AuthGuard, ProjectProfileGuard] }, // now lazy
+ 
++  // Monitor V2 (new inbox, lazy): everything lives in app/monitor-v2
++  {
++    path: 'project/:projectid/monitor-v2',
++    loadChildren: () => import('app/monitor-v2/monitor-v2.module').then(m => m.MonitorV2Module),
++    canActivate: [AuthGuard]
++  },
++
+   // Conversations list demo page
+   {
+     path: 'project/:projectid/wsrequests-demo',
+diff --git a/src/app/components/sidebar/sidebar.component.html b/src/app/components/sidebar/sidebar.component.html
+index 0cfd0c2..92db79a 100755
+--- a/src/app/components/sidebar/sidebar.component.html
++++ b/src/app/components/sidebar/sidebar.component.html
+@@ -256,6 +256,21 @@
+       </div>
+     </ng-container>
+ 
++    <!-- ------------------------------------------- -->
++    <!-- Monitor V2 -->
++    <!-- ------------------------------------------- -->
++    <div id="monitor-v2" *ngIf="project" routerLinkActive="item-active" matTooltipClass="sb-mat-tooltip"
++      matTooltip="Monitor V2" #tooltip="matTooltip" matTooltipPosition='right' matTooltipHideDelay="100">
++      <a class="customAncor" routerLink="project/{{ project._id }}/monitor-v2">
++        <span>
++          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="none">
++            <path
++              d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240 160Zm0-240Zm-240 160Z" />
++          </svg>
++        </span>
++      </a>
++    </div>
++
+ 
+   </div>
+ 

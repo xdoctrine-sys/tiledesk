@@ -1,0 +1,873 @@
+{
+  "app": {
+    "name": "Tarashli",
+    "offline": "Connection lost — reconnecting…",
+    "reconnecting": "Reconnecting…",
+    "online": "Connection restored",
+    "session": "Your session has expired.",
+    "relogin": "Log in again",
+    "forbidden": "You don't have access to this page.",
+    "backToInbox": "Back to the inbox",
+    "error": "Something went wrong.",
+    "forbiddenAction": "You don't have permission to do this.",
+    "update": "A new version is available.",
+    "reload": "Reload",
+    "noChannel": "Connect your first channel to start receiving messages.",
+    "noChannelHint": "Channels are set up in the Tiledesk settings.",
+    "readOnly": "Read-only mode: this action is turned off for now.",
+    "readOnlyBanner": "Read-only view of your live conversations. Actions are turned off."
+  },
+  "project": {
+    "name": "Demo Project"
+  },
+  "customer": {
+    "guest": "Visitor"
+  },
+  "lang": {
+    "ar": "Arabic",
+    "en": "English"
+  },
+  "role": {
+    "owner": "Owner",
+    "admin": "Admin",
+    "agent": "Agent"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "close": "Close",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "more": "More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "remove": "Remove",
+    "retry": "Retry",
+    "save": "Save",
+    "undo": "Undo",
+    "details": "Details",
+    "hideDetails": "Hide",
+    "on": "On",
+    "off": "Off"
+  },
+  "time": {
+    "now": "now",
+    "min": "{n} min",
+    "h": "{n} h",
+    "hm": "{h} h {m} min",
+    "yesterday": "yesterday",
+    "today": "Today"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "inbox": "Inbox",
+    "sounds": "Notification sounds",
+    "help": "Help",
+    "version": "Tarashli inbox template · v0.1"
+  },
+  "presence": {
+    "menu": "Profile and availability",
+    "availability": "Availability",
+    "available": "Available",
+    "busy": "Busy",
+    "away": "Away",
+    "breaks": "Take a break",
+    "break": "On break ({type}) · back at {time}",
+    "logout": "Log out",
+    "resume": "Resume",
+    "goAvailable": "Go available",
+    "awayBanner": "You're away: no new conversations will be assigned to you.",
+    "break.pause": "Pause",
+    "break.training": "Training",
+    "break.prayer": "Prayer",
+    "break.meal": "Meal",
+    "autoAway": "You were set to Away after 15 minutes of inactivity."
+  },
+  "prefs": {
+    "language": "Language",
+    "theme": "Theme",
+    "digits": "Digits",
+    "sounds": "Sounds",
+    "theme.light": "Light",
+    "theme.dark": "Dark",
+    "theme.system": "System",
+    "hijri": "Hijri dates"
+  },
+  "logout": {
+    "guard": "You're still available. Switch to Away before logging out?",
+    "awayAndOut": "Switch to Away and log out",
+    "anyway": "Log out anyway",
+    "done": "Logged out (the template has no login page)."
+  },
+  "sidebar": {
+    "title": "Views",
+    "channels": "Channels",
+    "departments": "Departments",
+    "teams": "Teams",
+    "labels": "Labels",
+    "saved": "Saved views",
+    "showAll": "Show all ({n})",
+    "collapse": "Collapse the sidebar",
+    "role": "Support inbox",
+    "new": "New ticket"
+  },
+  "view": {
+    "mine": "Mine",
+    "waiting": "Waiting for human",
+    "bot": "Handled by AI",
+    "all": "All",
+    "mentions": "Mentions",
+    "rename": "Rename",
+    "share": "Share with the team",
+    "unshare": "Make private",
+    "name": "View name",
+    "deleteTitle": "Delete “{name}”?",
+    "deleteText": "The conversations are not deleted."
+  },
+  "channel": {
+    "web": "Web chat",
+    "whatsapp": "WhatsApp",
+    "messenger": "Messenger",
+    "instagram": "Instagram",
+    "telegram": "Telegram",
+    "email": "E-mail",
+    "sms": "SMS",
+    "voice": "Voice",
+    "internal": "Internal"
+  },
+  "hours": {
+    "chipOpen": "Open · closes {time}",
+    "chipClosed": "Closed · opens {time}",
+    "chipRamadan": "Ramadan hours · {close}–{open}",
+    "openDetail": "The team answers until {time}.",
+    "closed": "Outside business hours — back {day} {time}",
+    "tomorrow": "tomorrow",
+    "ramadan": "Ramadan hours: closed in the afternoon, back after the iftar.",
+    "prayer": "Prayer break ({name}) — SLA paused",
+    "maghrib": "Maghrib",
+    "profileStandard": "Standard hours",
+    "profileRamadan": "Ramadan hours",
+    "replyAnyway": "Reply anyway",
+    "today": "today"
+  },
+  "list": {
+    "search": "Search name, text or #ticket",
+    "searchBtn": "Search",
+    "select": "Select conversation",
+    "selectAll": "Select all",
+    "unread": "{n} unread",
+    "draft": "Draft:",
+    "prefixAi": "AI:",
+    "prefixYou": "You:",
+    "prefixNote": "Note:",
+    "voice": "Voice message",
+    "end": "All loaded",
+    "new": "↑ {n} new",
+    "error": "Couldn't load conversations.",
+    "empty": {
+      "mine": "No conversations assigned to you.",
+      "viewQueue": "View the queue",
+      "queue": "No one is waiting. Well done!",
+      "bot": "No conversations with the bot right now.",
+      "mentions": "No one has mentioned you yet.",
+      "mentionsHint": "Type @ in an internal note to mention a colleague.",
+      "snoozed": "No snoozed conversations.",
+      "snoozedHint": "Press Z to snooze a conversation.",
+      "resolved": "No recently resolved conversations.",
+      "filtered": "No results for these filters.",
+      "generic": "No conversations here."
+    },
+    "title": "Messages"
+  },
+  "queue": {
+    "pickNext": "Take the next urgent conversation"
+  },
+  "tabs": {
+    "label": "Conversation status",
+    "open": "Open",
+    "pending": "Pending",
+    "snoozed": "Snoozed",
+    "resolved": "Resolved",
+    "all": "All"
+  },
+  "chips": {
+    "label": "Quick filters",
+    "unread": "Unread",
+    "bot": "AI",
+    "waiting": "Waiting",
+    "high": "High priority",
+    "window": "24 h < 1 h"
+  },
+  "sort": {
+    "title": "Sort by",
+    "last_activity": "Last activity",
+    "created": "Newest",
+    "unread": "Unread first",
+    "priority": "Priority",
+    "longest_wait": "Longest wait",
+    "sla": "Closest SLA"
+  },
+  "density": {
+    "title": "Density",
+    "comfortable": "Comfortable",
+    "compact": "Compact"
+  },
+  "filters": {
+    "title": "Filters",
+    "natural": "Describe it: “unassigned high priority today”",
+    "naturalMiss": "I couldn't read that. Try words like urgent, bot, WhatsApp, today.",
+    "add": "Add filter",
+    "clear": "Clear filters",
+    "apply": "Apply",
+    "saveView": "Save as view",
+    "saved": "View “{name}” saved",
+    "conjunction": "Switch AND / OR",
+    "and": "AND",
+    "or": "OR",
+    "attribute": "Attribute",
+    "value": "Value",
+    "me": "Me",
+    "unassigned": "Unassigned",
+    "days1": "last 24 hours",
+    "days7": "last 7 days",
+    "days30": "last 30 days",
+    "op": {
+      "is": "is",
+      "isNot": "is not",
+      "within": "within",
+      "olderThan": "older than"
+    },
+    "actor": {
+      "bot": "AI bot",
+      "human": "Human",
+      "waiting": "Waiting for human"
+    },
+    "attr": {
+      "status": "Status",
+      "priority": "Priority",
+      "assignee": "Assignee",
+      "actor": "Handled by",
+      "department": "Department",
+      "team": "Team",
+      "channel": "Channel",
+      "label": "Label",
+      "language": "Language",
+      "country": "Country",
+      "created": "Created"
+    }
+  },
+  "bulk": {
+    "label": "Bulk actions",
+    "count": "{n} selected",
+    "clear": "Clear",
+    "progress": "{done}/{total}",
+    "done": "{n} conversations updated",
+    "partial": "{done} of {total} processed.",
+    "retryFailed": "Retry the failures",
+    "simulate": "{ok} can be applied · {warn} need review",
+    "adjust": "Adjust",
+    "applyTo": "Apply to {n}",
+    "warn": {
+      "bot": "{n} are handled by the AI bot.",
+      "refused": "{n} can't be changed by you.",
+      "bot.one": "1 is handled by the AI bot.",
+      "refused.one": "1 can't be changed by you."
+    },
+    "reason": {
+      "no_permission": "no permission"
+    },
+    "done.one": "1 conversation updated"
+  },
+  "hover": {
+    "department": "Department",
+    "status": "Status",
+    "created": "Created",
+    "location": "From"
+  },
+  "actions": {
+    "resolve": "Resolve",
+    "resolveNext": "Resolve and next",
+    "reopen": "Reopen",
+    "pending": "Mark as pending",
+    "snooze": "Snooze",
+    "assign": "Assign",
+    "labels": "Labels",
+    "priority": "Priority",
+    "takeover": "Take over",
+    "handback": "Hand back to AI",
+    "join": "Join",
+    "markUnread": "Mark as unread",
+    "markRead": "Mark as read",
+    "addTeammate": "Add teammate",
+    "leave": "Leave conversation",
+    "transcript": "Transcript",
+    "offlineTicket": "Convert to offline ticket",
+    "block": "Block visitor",
+    "prev": "Previous conversation",
+    "next": "Next conversation",
+    "newTab": "Open in a new tab",
+    "copyLink": "Copy link",
+    "mute": "Mute notifications",
+    "deleteConv": "Delete conversation"
+  },
+  "actor": {
+    "bot": "AI assistant",
+    "you": "You",
+    "waiting": "Waiting for a human",
+    "waitingFor": "Waiting {d}",
+    "pending": "Waiting for customer",
+    "snoozed": "Snoozed",
+    "resolved": "Resolved",
+    "abandoned": "Abandoned",
+    "open": "Open",
+    "since": "since {time}"
+  },
+  "priority": {
+    "urgent": "Urgent",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "none": "None"
+  },
+  "sla": {
+    "paused": "SLA paused",
+    "breached": "SLA breached {d}",
+    "dueIn": "SLA {d}",
+    "exact": "Due {time}",
+    "waitBreached": "A human wait is beyond its SLA"
+  },
+  "header": {
+    "openContact": "Show contact",
+    "showPanel": "Show contact panel",
+    "online": "online",
+    "offline": "offline",
+    "lastSeen": "last seen {t}",
+    "typing": "typing…"
+  },
+  "conv": {
+    "none": "Select a conversation to get started.",
+    "noneHint": "J / K to move, ↵ to open",
+    "notFound": "This conversation no longer exists or you don't have access to it.",
+    "backToList": "Back to the list",
+    "loadError": "Couldn't load this conversation.",
+    "transferring": "Transfer in progress…",
+    "ticketPill": "Ticket",
+    "botTyping": "The assistant is typing…",
+    "colleague": "{name} is handling this conversation.",
+    "resolvedBanner": "Resolved by {agent} on {date}. A new message from the customer will reopen it.",
+    "snoozed": "Snoozed until {date}",
+    "snoozedReply": "Snoozed until the customer replies",
+    "cancelSnooze": "Cancel snooze",
+    "pending": "Waiting for the customer's reply",
+    "reopenNow": "Reopen now",
+    "abandoned": "The customer left before getting a reply.",
+    "offlineTicket": "Handled as a ticket (no automatic reassignment)",
+    "backToChat": "Back to chat"
+  },
+  "cust": {
+    "typing": "The customer is typing…",
+    "blocked": "This contact is blocked.",
+    "unblock": "Unblock"
+  },
+  "coll": {
+    "writing": "{name} is writing a reply",
+    "viewing": "{name} is viewing this conversation"
+  },
+  "win": {
+    "title": "24-hour service window",
+    "open": "24 h: {h} h {m} m",
+    "closing": "24-hour window: {n} min left",
+    "closed": "24-hour window closed: only an approved template can be sent."
+  },
+  "relay": {
+    "title": "Who held this conversation",
+    "expand": "Show the relay ribbon",
+    "collapse": "Fold the relay ribbon",
+    "tip": "{who} · {dur} · {n} messages",
+    "earlier": "{n} earlier segments",
+    "kind": {
+      "bot": "AI",
+      "waiting_human": "Waiting",
+      "human": "Agent",
+      "customer_pending": "Customer",
+      "snoozed": "Snoozed"
+    },
+    "tip.one": "{who} · {dur} · {n} message",
+    "earlier.one": "{n} earlier segment"
+  },
+  "thread": {
+    "label": "Messages",
+    "newMessages": "New messages",
+    "newBelow": "↓ {n} new",
+    "search": "Search in this conversation",
+    "noMatch": "No match"
+  },
+  "event": {
+    "generic": "Conversation updated",
+    "group": "{n} events",
+    "handover": "{bot} handed over to {agent}",
+    "FLOW_TRIGGER": "Flow trigger",
+    "CHAT_CREATED": "Conversation started",
+    "MEMBER_JOINED_GROUP": {
+      "bot": "{name} (AI) joined the conversation",
+      "agent": "{name} joined the conversation"
+    },
+    "MEMBER_LEFT_GROUP": {
+      "bot": "The assistant {name} left the conversation",
+      "agent": "{name} left the conversation"
+    },
+    "CHAT_REOPENED": "Conversation reopened",
+    "CHAT_CLOSED": "Resolved by {agent}",
+    "TARASHLI_SNOOZED": "Snoozed until {until}",
+    "TARASHLI_PENDING": "Waiting for the customer's reply",
+    "TARASHLI_HANDED_BACK": "{agent} handed the conversation back to {bot}",
+    "TARASHLI_HANDOFF_REQUESTED": {
+      "customer_asked": "The customer asked for a person",
+      "bot_failed": "The assistant couldn't understand twice",
+      "agent_transfer": "Transferred by an agent"
+    }
+  },
+  "msg": {
+    "actions": "Message actions",
+    "reply": "Reply",
+    "copy": "Copy",
+    "translate": "Translate",
+    "translated": "Translated",
+    "copyLink": "Copy message link",
+    "toCanned": "Add to saved replies",
+    "toContact": "Add to contact",
+    "flag": "Flag this bot answer",
+    "delete": "Delete",
+    "hide": "Hide in Tarashli",
+    "deleted": "Message deleted",
+    "note": "Note",
+    "sending": "Sending",
+    "queued": "Waiting for connection",
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "read": "Read",
+    "failed": "Failed to send",
+    "undo": "Message sent",
+    "deleteTitle": "Delete this message?",
+    "deleteText": "It will be removed for everyone when the channel allows it.",
+    "flagTitle": "Flag this bot answer",
+    "flagText": "It goes to the improvement queue of the flow.",
+    "flagReason": "What was wrong?",
+    "flagged": "Flagged for improvement",
+    "toContactTitle": "Save to the contact?",
+    "toContactText": "Save {value} as the contact's {field}?",
+    "ai": "AI"
+  },
+  "rich": {
+    "chosen": "chosen"
+  },
+  "att": {
+    "attachment": "Attachment",
+    "open": "Open",
+    "download": "Download",
+    "location": "Shared location",
+    "rejected": "File rejected by {channel} ({reason})",
+    "reason": {
+      "type": "type not accepted",
+      "size": "larger than {mb} MB",
+      "none": "no files on this channel"
+    }
+  },
+  "voice": {
+    "play": "Play",
+    "pause": "Pause",
+    "speed": "Playback speed",
+    "showTranscript": "Show transcription",
+    "hideTranscript": "Hide transcription",
+    "transcribing": "Transcribing…",
+    "tooShort": "Recording too short"
+  },
+  "pii": {
+    "imageHidden": "Sensitive image hidden",
+    "kind": {
+      "qid": "QID",
+      "emirates_id": "Emirates ID",
+      "saudi_id": "Saudi ID",
+      "kuwait_civil_id": "Civil ID",
+      "iban": "IBAN",
+      "card": "Card",
+      "passport": "Passport"
+    },
+    "show": "Show",
+    "masked": "hidden",
+    "noPermission": "You don't have the “sensitive data” permission.",
+    "askTitle": "Show sensitive data",
+    "reason": {
+      "identity": "Identity check",
+      "contract": "Drafting the contract",
+      "other": "Other"
+    },
+    "logged": "This access is logged (agent, time, reason).",
+    "reasonField": "Reason"
+  },
+  "brief": {
+    "title": "Handover brief",
+    "collapse": "Fold the brief",
+    "expand": "Unfold the brief",
+    "collected": "Collected by the AI",
+    "suggestion": "Suggested first reply",
+    "ignore": "Ignore",
+    "insert": "Insert",
+    "reason": {
+      "customer_asked": "The customer asked for a person",
+      "bot_failed": "The AI didn't understand twice",
+      "agent_transfer": "Transferred by an agent",
+      "snooze_end": "Snooze ended",
+      "handed_back": "Handed back by an agent"
+    },
+    "mood": {
+      "positive": "Positive mood",
+      "neutral": "Neutral mood",
+      "negative": "Frustrated"
+    }
+  },
+  "handback": {
+    "title": "Hand back to the AI",
+    "text": "Choose where “{bot}” resumes the flow.",
+    "preview": "Next message the bot will send",
+    "keep": "Keep the conversation in my queue for 30 min",
+    "confirm": "Hand back",
+    "done": "Handed back to {bot}."
+  },
+  "comp": {
+    "reply": "Reply",
+    "internalNote": "Internal note",
+    "note": "Internal note",
+    "send": "Send",
+    "addNote": "Add note",
+    "sendOptions": "Send options",
+    "sendResolve": "Send and resolve",
+    "sendPending": "Send and set pending",
+    "emoji": "Emoji",
+    "attach": "Attach a file",
+    "voice": "Voice message",
+    "canned": "Saved replies",
+    "placeholder": "Write… ( / saved replies )",
+    "placeholderTakeover": "Reply to take over this conversation…",
+    "noteHint": "Internal note — visible to your team only",
+    "drop": "Drop files to attach",
+    "slideCancel": "Press Esc to cancel",
+    "recording": "Recording",
+    "lint": {
+      "tooLong": "Too long for {channel} (max {max})."
+    },
+    "more": "Composer options",
+    "signature": "Signature",
+    "expand": "Expanded editor",
+    "registerPreview": "What the customer will receive",
+    "useThis": "Use this",
+    "penRequest": "Request the pen",
+    "formatUnsupported": "Formatting isn't supported on {channel}.",
+    "templateOnly": "Free replies are off: only an approved template can be sent."
+  },
+  "canned": {
+    "title": "Saved replies",
+    "suggested": "Suggested",
+    "none": "No saved reply found.",
+    "preview": "Preview",
+    "create": "Create a saved reply",
+    "createTitle": "New saved reply",
+    "fieldTitle": "Title",
+    "fieldShortcut": "Shortcut (after “/”)",
+    "fieldText": "Text",
+    "saved": "Saved reply created."
+  },
+  "mention": {
+    "title": "Mention",
+    "none": "No match.",
+    "agent": "Agent",
+    "team": "Team",
+    "department": "Department"
+  },
+  "emoji": {
+    "title": "Emoji",
+    "search": "Search emoji",
+    "none": "No emoji found.",
+    "recent": "Recent",
+    "smileys": "Smileys",
+    "gestures": "Gestures",
+    "objects": "Objects",
+    "symbols": "Symbols"
+  },
+  "labels": {
+    "title": "Labels",
+    "search": "Search or create",
+    "create": "Create “{name}”",
+    "none": "No labels."
+  },
+  "snooze": {
+    "title": "Snooze",
+    "placeholder": "e.g. tomorrow 10am, in 2 hours, بعد ساعتين",
+    "interpreted": "→ {when}",
+    "notUnderstood": "I couldn't read that time.",
+    "custom": "Date and time…",
+    "set": "Set",
+    "next_reply": "Until the customer replies",
+    "1h": "In 1 hour",
+    "tonight": "Tonight (18:00)",
+    "tomorrow": "Tomorrow at opening",
+    "weekend": "After the weekend",
+    "untilReply": "Until the customer replies",
+    "in1h": "In 1 hour",
+    "afterWeekend": "After the weekend"
+  },
+  "assign": {
+    "title": "Assign conversation #{n}",
+    "addTitle": "Add a teammate to #{n}",
+    "search": "Search an agent, bot, department…",
+    "tab": {
+      "humans": "Humans",
+      "bots": "Bots",
+      "departments": "Departments",
+      "teams": "Teams"
+    },
+    "recommended": "Recommended",
+    "full": "full",
+    "onBreak": "On break ({type}) · back {time}",
+    "load": "{n} of {max} conversations",
+    "note": "Handover note (visible to the team)",
+    "notePlaceholder": "e.g. The customer wants a visit tomorrow",
+    "follow": "Stay subscribed to this conversation",
+    "confirm": "Assign to {name}",
+    "addConfirm": "Add {name}",
+    "toMe": "Assign to me",
+    "more": "More…",
+    "bot": "AI bot",
+    "dept": "Department",
+    "deptWithBot": "Department with an AI bot",
+    "members": "{n} members",
+    "breakConfirm": "{name} is on a break",
+    "breakConfirmText": "They are back at {time}. Assign anyway?",
+    "members.one": "{n} member"
+  },
+  "toast": {
+    "resolved": "Conversation #{n} resolved",
+    "snoozed": "Snoozed until {when}",
+    "takeover": "You're handling this conversation",
+    "linkCopied": "Link copied",
+    "copied": "Copied",
+    "muted": "Notifications muted for this conversation",
+    "assigned": "Assigned to {name}",
+    "teammateAdded": "{name} added",
+    "contactUpdated": "Contact updated",
+    "penRequested": "Request sent to {name}"
+  },
+  "confirm": {
+    "deleteConvTitle": "Delete this conversation?",
+    "deleteConvText": "This can't be undone. Type the ticket number to confirm.",
+    "leaveTitle": "Leave this conversation?",
+    "leaveText": "You will no longer receive its messages.",
+    "offlineTitle": "Convert to offline ticket?",
+    "offlineText": "Smart reassignment is turned off. The conversation is treated as a ticket, so you can take your time to reply.",
+    "onlineText": "Smart reassignment is turned on again.",
+    "blockTitle": "Block {name}?",
+    "blockText": "The visitor will no longer be able to write to you.",
+    "blockReason": "Reason (optional)"
+  },
+  "transcript": {
+    "pdf": "Download PDF",
+    "html": "Download HTML",
+    "email": "Send by e-mail",
+    "done": "Transcript ready ({how})."
+  },
+  "panel": {
+    "title": "Contact",
+    "none": "Select a conversation to see its contact.",
+    "count": "{n}"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "company": "Company",
+    "address": "Address",
+    "add": "Add",
+    "edit": "Edit",
+    "addProp": "Add a property",
+    "propName": "Property",
+    "propValue": "Value",
+    "addTag": "Add label",
+    "rating": "Rating",
+    "phoneError": "Use the international format, e.g. +974 5512 3456 ({prefixes}).",
+    "emailError": "Enter a valid e-mail address.",
+    "addEmail": "Add email",
+    "addPhone": "Add phone",
+    "addCompany": "Add company",
+    "addAddress": "Add address",
+    "copyEmail": "Copy e-mail",
+    "copyPhone": "Copy phone",
+    "details": "Details"
+  },
+  "bot": {
+    "title": "AI collected data",
+    "noData": "The AI hasn't collected any data.",
+    "jump": "Go to the message",
+    "slot": {
+      "type": "Type",
+      "zone": "Area",
+      "budget": "Budget",
+      "bedrooms": "Bedrooms"
+    }
+  },
+  "ticket": {
+    "title": "Ticket",
+    "create": "Create ticket",
+    "number": "Ticket",
+    "followers": "Followers",
+    "addFollower": "Add a follower",
+    "followersHint": "Followers are kept informed of the progress of the conversation.",
+    "offlineHint": "Smart reassignment is turned off and you can take your time to reply.",
+    "requester": "Requester",
+    "newRequester": "New requester",
+    "existingRequester": "Choose an existing contact",
+    "channel": "Reply channel",
+    "channel.internal": "Internal",
+    "subject": "Subject",
+    "assignee": "Assignee",
+    "message": "Message",
+    "required": "This field is required.",
+    "submit": "Create ticket",
+    "created": "Ticket #{n} created",
+    "whatsappNote": "WhatsApp: an approved template is needed outside the 24-hour window."
+  },
+  "notes": {
+    "title": "Notes",
+    "conversation": "This conversation",
+    "contact": "Contact",
+    "placeholder": "Add a note… (⌘↵)",
+    "add": "Add",
+    "empty": "No notes yet.",
+    "emptyContact": "No notes on this contact yet."
+  },
+  "history": {
+    "title": "Previous conversations",
+    "empty": "No previous conversations.",
+    "archived": "This conversation is archived (demo data)."
+  },
+  "tech": {
+    "title": "Technical context",
+    "device": "Device",
+    "ip": "IP address",
+    "language": "Language",
+    "entryDept": "Entry department",
+    "sourcePage": "Source page",
+    "pageTitle": "Page title",
+    "widget": "Widget version",
+    "pages": "{n} pages viewed",
+    "pages.one": "{n} page viewed"
+  },
+  "search": {
+    "empty": "No results for “{q}”"
+  },
+  "shortcuts": {
+    "title": "Keyboard shortcuts",
+    "g": {
+      "list": "List",
+      "conversation": "Conversation",
+      "composer": "Composer",
+      "layout": "Layout"
+    },
+    "nextPrev": "Next / previous conversation",
+    "open": "Open the conversation",
+    "back": "Back to the list",
+    "select": "Select",
+    "selectAll": "Select all",
+    "nextTab": "Next status tab",
+    "unread": "Mark as unread",
+    "resolve": "Resolve",
+    "resolveNext": "Resolve and open the next",
+    "snooze": "Snooze",
+    "assign": "Assign / assign to me",
+    "takeover": "Take over / hand back to AI",
+    "labelsPriority": "Labels / priority",
+    "createTicket": "Create a ticket",
+    "replyNote": "Reply / internal note",
+    "send": "Send",
+    "sendResolve": "Send and resolve / set pending",
+    "ai": "AI help",
+    "attach": "Attach a file",
+    "replyNoteInside": "Reply / note (inside the composer)",
+    "canned": "Saved replies",
+    "mention": "Mention (notes)",
+    "help": "This help",
+    "panels": "Sidebar / context panel",
+    "threadSearch": "Search in the conversation"
+  },
+  "entry": {
+    "open": "Show where the visitor came from"
+  },
+  "copilot": {
+    "botReplying": "{bot} is replying · intent: {intent}"
+  },
+  "ai": {
+    "title": "AI help",
+    "suggest": "Suggest a reply",
+    "write": "Write",
+    "rephrase": "Rephrase",
+    "fix": "Fix grammar and spelling",
+    "shorten": "Shorten",
+    "expand": "Expand",
+    "translate": "Translate",
+    "tone": "Change tone",
+    "tone_professional": "Professional",
+    "tone_friendly": "Friendly",
+    "tone_casual": "Casual",
+    "conversation": "Conversation",
+    "summarize": "Summarize the conversation",
+    "copilot": "Ask the co-pilot",
+    "compare": "Compare before and after",
+    "before": "Before",
+    "after": "After",
+    "valueChanged": "Value changed: {from} → {to}",
+    "fixValues": "Fix",
+    "revert": "Revert to the original",
+    "keepAnyway": "Keep anyway",
+    "replace": "Replace",
+    "insertNote": "Insert as note",
+    "register": "Reply register",
+    "register.khaleeji": "Khaleeji",
+    "register.fusha": "Fusha",
+    "register.en": "English"
+  },
+  "attrs": {
+    "title": "Attributes",
+    "search": "Filter attributes",
+    "none": "No attributes.",
+    "json": "View JSON",
+    "piiLog": "Sensitive data access"
+  },
+  "participants": {
+    "title": "Participants",
+    "none": "No participants yet."
+  },
+  "register": {
+    "arabizi": "Arabizi",
+    "khaleeji": "Khaleeji",
+    "fusha": "Fusha",
+    "en": "EN",
+    "arabic": "In Arabic",
+    "translation": "Translation"
+  },
+  "resume": {
+    "since": "Since you last wrote at {time}",
+    "new": "{n} new"
+  },
+  "layout": {
+    "resizeViews": "Resize the views sidebar",
+    "resizeList": "Resize the conversation list",
+    "resizeContext": "Resize the contact panel"
+  },
+  "who": {
+    "bot": "Handled by AI",
+    "me": "Handled by You",
+    "other": "Handled by {name}",
+    "waiting": "Waiting for human · {d}",
+    "waitingShort": "Waiting for human",
+    "relay": "Who held this conversation"
+  }
+}

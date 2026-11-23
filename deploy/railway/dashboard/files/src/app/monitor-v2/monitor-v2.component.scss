@@ -1,0 +1,36 @@
+// Everything here lives inside the page's shadow root: nothing leaks to the dashboard, and the dashboard's Bootstrap /
+// Material CSS cannot reach the page.
+@use 'styles/tokens';
+@use 'styles/base';
+
+// The dashboard's navbar is absolutely positioned over the top 60 px of the main panel: the page starts under it.
+:host {
+  margin-block-start: 61px;
+  block-size: calc(100vh - 61px);
+}
+
+.tr-monitor-v2 {
+  display: flex;
+  flex-direction: column;
+}
+tr-inbox-shell {
+  flex: 1 1 0;
+  min-block-size: 0;
+}
+.ro-banner {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-block: 8px 0;
+  margin-inline: 8px;
+  padding-block: 6px;
+  padding-inline: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: var(--tr-fs-body-sm);
+  line-height: var(--tr-lh-body-sm);
+}
